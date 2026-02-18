@@ -3,321 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - カジュアル領収書 / Casual Receipt</title>
+    <title>Privacy Policy & Terms - QueStA Apps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --pink: #f9a8c9;
+            --pink-mid: #f4b8d4;
+            --blue: #a8c8f9;
+            --blue-mid: #b8d4f4;
+            --accent-pink: #e8769f;
+            --accent-blue: #6fa8dc;
+            --text: #4a4060;
+            --text-light: #7a6e8a;
+            --white: #ffffff;
+            --card-bg: rgba(255,255,255,0.85);
         }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
+            font-family: 'Nunito', 'Zen Maru Gothic', sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, #fce4f0 0%, #e4f0fc 100%);
+            min-height: 100vh;
+            padding: 0;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-        .header {
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
+            padding: 60px 20px 80px;
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #667eea;
+            position: relative;
+            overflow: hidden;
         }
-        h1 {
-            font-size: 32px;
-            color: #667eea;
-            margin-bottom: 10px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40px; left: -40px;
+            width: 200px; height: 200px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
         }
-        .app-name {
-            font-size: 24px;
-            color: #764ba2;
-            margin-bottom: 10px;
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; right: -30px;
+            width: 280px; height: 280px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
         }
-        .last-updated {
-            font-size: 14px;
-            color: #666;
-        }
-        .language-toggle {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .language-toggle button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
             color: white;
-            border: none;
-            padding: 10px 30px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            margin: 0 10px;
-            transition: all 0.3s ease;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
         }
-        .language-toggle button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-        .language-toggle button.active {
-            background: #764ba2;
-        }
-        .content {
-            display: none;
-        }
-        .content.active {
-            display: block;
-        }
-        h2 {
-            color: #667eea;
-            font-size: 24px;
-            margin: 30px 0 15px 0;
-            padding-left: 15px;
-            border-left: 5px solid #667eea;
-        }
-        h3 {
-            color: #764ba2;
+        .hero p {
             font-size: 18px;
-            margin: 20px 0 10px 0;
+            color: rgba(255,255,255,0.9);
+            position: relative;
+            z-index: 1;
         }
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 28px 20px;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(249,168,201,0.3);
         }
-        ul {
-            margin: 15px 0;
-            padding-left: 30px;
+        .lang-btn {
+            padding: 10px 32px;
+            border-radius: 30px;
+            border: 2px solid var(--accent-pink);
+            background: transparent;
+            color: var(--accent-pink);
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s;
         }
-        li {
-            margin-bottom: 10px;
+        .lang-btn.active, .lang-btn:hover {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-blue));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(232,118,159,0.35);
         }
-        .contact {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
+
+        /* Main content */
+        .main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
         }
+
+        /* App grid */
+        .apps-section {
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--accent-pink);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 14px;
+        }
+        .app-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 18px 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(168,200,249,0.25);
+            border: 1.5px solid rgba(249,168,201,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .app-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(168,200,249,0.4);
+        }
+        .app-card .emoji { font-size: 28px; margin-bottom: 8px; }
+        .app-card .app-icon { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 8px; object-fit: cover; }
+        .app-card .app-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .app-card .status {
+            font-size: 11px;
+            margin-top: 6px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .status.available {
+            background: linear-gradient(135deg, #fce4f0, #e4f0fc);
+            color: var(--accent-pink);
+        }
+        .status.coming {
+            background: #f0f0f5;
+            color: #aaa;
+        }
+
+        /* Policy card */
+        .policy-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 40px rgba(168,200,249,0.2);
+            border: 1.5px solid rgba(249,168,201,0.15);
+            margin-bottom: 24px;
+        }
+
+        .content { display: none; }
+        .content.active { display: block; }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--accent-pink);
+            margin: 32px 0 14px;
+            padding-left: 14px;
+            border-left: 4px solid;
+            border-image: linear-gradient(180deg, var(--accent-pink), var(--accent-blue)) 1;
+        }
+        h2:first-child { margin-top: 0; }
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin: 18px 0 8px;
+        }
+        p { margin-bottom: 14px; line-height: 1.85; font-size: 15px; }
+        ul { padding-left: 24px; margin-bottom: 14px; }
+        li { margin-bottom: 8px; line-height: 1.75; font-size: 15px; }
+
+        .contact-box {
+            background: linear-gradient(135deg, #fce4f0 0%, #e4f0fc 100%);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #e1e8ed;
-            color: #666;
-            font-size: 14px;
+            padding: 30px 20px;
+            color: var(--text-light);
+            font-size: 13px;
+            border-top: 1px solid rgba(249,168,201,0.25);
+        }
+        .footer .heart { color: var(--accent-pink); }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 28px; }
+            .policy-card { padding: 24px 20px; }
+            .app-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🔐 Privacy Policy</h1>
-            <div class="app-name">カジュアル領収書 / Casual Receipt</div>
-            <div class="last-updated">Last Updated: January 18, 2026</div>
-        </div>
 
-        <div class="language-toggle">
-            <button onclick="switchLanguage('ja')" id="btn-ja" class="active">日本語</button>
-            <button onclick="switchLanguage('en')" id="btn-en">English</button>
-        </div>
+<div class="hero">
+    <h1>🌸 QueStA Apps</h1>
+    <p>Privacy Policy & Terms of Service</p>
+</div>
 
-        <!-- Japanese Content -->
+<div class="lang-toggle">
+    <button class="lang-btn active" onclick="switchLang('ja')" id="btn-ja">日本語</button>
+    <button class="lang-btn" onclick="switchLang('en')" id="btn-en">English</button>
+</div>
+
+<div class="main">
+
+    <!-- App List -->
+    <div class="apps-section">
+        <div class="section-title">📱 Our Apps</div>
+        <div class="app-grid">
+            <div class="app-card"><img src="images/mochi.webp" class="app-icon" alt="mochi puzzle"><div class="app-name">mochi puzzle</div><span class="status available">Available</span></div>
+            <div class="app-card"><img src="images/Receipt .png" class="app-icon" alt="Casual Receipt"><div class="app-name">Casual Receipt</div><span class="status available">Available</span></div>
+            <div class="app-card"><div class="emoji">💬</div><div class="app-name">Phrase Master</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">📝</div><div class="app-name">Oneline Note</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">📏</div><div class="app-name">Length Discovery</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">📐</div><div class="app-name">AR Ruler</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">🧮</div><div class="app-name">Math Arcade</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">🫙</div><div class="app-name">Volume Discovery</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">♾️</div><div class="app-name">Circulate Infinity</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">⚖️</div><div class="app-name">Weight Discovery</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">🍬</div><div class="app-name">Math Sweets Shop</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">🎈</div><div class="app-name">Balloon Pop</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">💭</div><div class="app-name">feelish</div><span class="status coming">Coming Soon</span></div>
+            <div class="app-card"><div class="emoji">⚡</div><div class="app-name">Whizzy</div><span class="status coming">Coming Soon</span></div>
+        </div>
+    </div>
+
+    <!-- Policy -->
+    <div class="policy-card">
+
+        <!-- Japanese -->
         <div id="content-ja" class="content active">
             <h2>📋 プライバシーポリシー</h2>
-            <p>
-                カジュアル領収書（以下「本アプリ」といいます）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に最大限の注意を払っています。本プライバシーポリシーは、本アプリがどのような情報を収集し、どのように使用・保護するかについて説明するものです。
-            </p>
+            <p>QueStAが提供するすべてのアプリ（以下「本アプリ」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に最大限の注意を払っています。</p>
 
             <h2>🔍 収集する情報</h2>
-            <p>本アプリは、以下の情報をユーザーの端末内にのみ保存します：</p>
-            <ul>
-                <li><strong>領収書データ：</strong>店名、日付、金額、明細、メッセージ、メモ、添付写真</li>
-                <li><strong>アプリ設定：</strong>選択したテーマ、フォント、表示設定</li>
-                <li><strong>プレミアム購入情報：</strong>プレミアム機能の購入状況</li>
-            </ul>
-            <p><strong>重要：</strong>上記の情報は全てユーザーの端末内（localStorage）にのみ保存され、サーバーやクラウドへのアップロードは一切行いません。</p>
+            <p>本アプリは、アプリの機能に必要な情報のみをユーザーの端末内に保存します。収集する情報の詳細は各アプリの機能によって異なりますが、基本的にサーバーやクラウドへのアップロードは行いません。</p>
 
             <h2>💡 情報の使用目的</h2>
-            <p>収集した情報は、以下の目的でのみ使用されます：</p>
             <ul>
-                <li>アプリの基本機能（領収書の作成、編集、削除、PDF/画像出力）の提供</li>
-                <li>ユーザー設定（テーマ、フォント）の保存と復元</li>
-                <li>プレミアム機能のアンロックと管理</li>
-                <li>アプリの動作の改善とバグ修正</li>
+                <li>アプリの基本機能の提供</li>
+                <li>ユーザー設定の保存と復元</li>
+                <li>アプリの動作改善とバグ修正</li>
             </ul>
 
             <h2>🔒 情報の共有と開示</h2>
-            <p>本アプリは、ユーザーの情報を第三者と共有することは一切ありません。</p>
-            <ul>
-                <li>全てのデータは端末内にのみ保存されます</li>
-                <li>クラウドへのアップロードは行いません</li>
-                <li>広告ネットワークに個人を特定できる情報を提供しません</li>
-                <li>アナリティクスサービスを使用していません</li>
-            </ul>
+            <p>本アプリは、ユーザーの情報を第三者と共有することは一切ありません。すべてのデータは端末内にのみ保存されます。</p>
 
-            <h2>📱 使用する権限</h2>
-            <h3>ストレージ権限</h3>
-            <p>PDF・画像ファイルを端末に保存するために使用します。ユーザーが出力操作を行った時のみアクセスします。</p>
-
-            <h3>カメラ権限（オプション）</h3>
-            <p>領収書に写真を添付する機能を使用する場合にのみ必要です。使用しない場合は権限の許可は不要です。</p>
-
-            <h3>インターネット接続</h3>
-            <p>以下の目的でインターネット接続を使用します：</p>
-            <ul>
-                <li>Google Fontsの読み込み（フォント機能の提供）</li>
-                <li>広告の表示（無料版のみ、プレミアム版では広告なし）</li>
-                <li>プレミアム機能の購入処理（Google Play Billing）</li>
-            </ul>
-
-            <h2>🎯 広告について</h2>
-            <p>無料版では広告が表示されますが、以下の点をご理解ください：</p>
-            <ul>
-                <li>広告表示のために個人を特定できる情報を収集しません</li>
-                <li>広告ネットワークは独自のプライバシーポリシーに従います</li>
-                <li>プレミアムパック（¥300）を購入すると広告が非表示になります</li>
-            </ul>
-
-            <h2>💰 プレミアム購入について</h2>
-            <p>プレミアム機能の購入は、Google Play Billingを通じて処理されます。購入情報はGoogleによって管理され、本アプリは購入状態の確認のみを行います。</p>
-
-            <h2>🗑️ データの削除</h2>
-            <p>ユーザーはいつでも以下の方法でデータを削除できます：</p>
-            <ul>
-                <li><strong>個別削除：</strong>アプリ内で各領収書を削除</li>
-                <li><strong>全削除：</strong>アプリをアンインストールすることで、全てのデータが削除されます</li>
-            </ul>
-            <p>データはクラウドに保存されていないため、アンインストール後は完全に削除され、復元はできません。</p>
+            <h2>💰 購入・課金について</h2>
+            <p>有料機能の購入はGoogle Play Billingを通じて処理されます。購入情報はGoogleによって管理され、本アプリは購入状態の確認のみを行います。</p>
 
             <h2>👶 子どものプライバシー</h2>
-            <p>本アプリは全年齢対象であり、13歳未満の子どもから意図的に個人情報を収集することはありません。本アプリは個人情報の収集を行わないため、子どもでも安全にご利用いただけます。</p>
+            <p>本アプリは全年齢対象であり、13歳未満の子どもから意図的に個人情報を収集することはありません。</p>
 
-            <h2>🔄 プライバシーポリシーの変更</h2>
-            <p>本プライバシーポリシーは、法令の変更やアプリの機能追加に伴い、予告なく変更される場合があります。重要な変更がある場合は、アプリ内またはこのページで通知いたします。</p>
+            <h2>🔄 ポリシーの変更</h2>
+            <p>本プライバシーポリシーは、法令の変更やアプリの機能追加に伴い予告なく変更される場合があります。</p>
 
             <h2>📞 お問い合わせ</h2>
-            <div class="contact">
-                <p>本プライバシーポリシーに関するご質問、ご意見、またはアプリに関するお問い合わせは、以下までご連絡ください：</p>
+            <div class="contact-box">
                 <p><strong>開発者：</strong>QueStA</p>
                 <p><strong>Email：</strong>support@questaedu.com</p>
             </div>
 
-            <h2>✅ 同意</h2>
-            <p>本アプリを使用することにより、本プライバシーポリシーに同意したものとみなされます。</p>
+            <h2>📜 利用規約</h2>
+            <p>本アプリを使用することにより、本プライバシーポリシーおよび利用規約に同意したものとみなされます。アプリは個人利用を目的としており、商業目的での再配布・改変は禁止されています。</p>
         </div>
 
-        <!-- English Content -->
+        <!-- English -->
         <div id="content-en" class="content">
             <h2>📋 Privacy Policy</h2>
-            <p>
-                Casual Receipt ("the App") respects the privacy of all users and takes the utmost care in protecting personal information. This Privacy Policy explains what information the App collects and how it is used and protected.
-            </p>
+            <p>All apps provided by QueStA ("the Apps") respect the privacy of all users and take the utmost care in protecting personal information.</p>
 
             <h2>🔍 Information We Collect</h2>
-            <p>The App stores the following information only on your device:</p>
-            <ul>
-                <li><strong>Receipt Data:</strong> Store name, date, amounts, line items, messages, notes, attached photos</li>
-                <li><strong>App Settings:</strong> Selected themes, fonts, display settings</li>
-                <li><strong>Premium Purchase Information:</strong> Status of premium feature purchases</li>
-            </ul>
-            <p><strong>Important:</strong> All of the above information is stored only on the user's device (localStorage) and is never uploaded to servers or the cloud.</p>
+            <p>The Apps store only the information necessary for app functionality on your device. Details vary by app, but we do not upload data to servers or the cloud.</p>
 
             <h2>💡 How We Use Information</h2>
-            <p>Collected information is used solely for the following purposes:</p>
             <ul>
-                <li>Providing basic app functionality (creating, editing, deleting receipts, PDF/image export)</li>
-                <li>Saving and restoring user settings (themes, fonts)</li>
-                <li>Unlocking and managing premium features</li>
+                <li>Providing basic app functionality</li>
+                <li>Saving and restoring user settings</li>
                 <li>Improving app performance and fixing bugs</li>
             </ul>
 
             <h2>🔒 Information Sharing and Disclosure</h2>
-            <p>The App does not share user information with third parties under any circumstances.</p>
-            <ul>
-                <li>All data is stored only on the device</li>
-                <li>No cloud uploads are performed</li>
-                <li>No personally identifiable information is provided to advertising networks</li>
-                <li>No analytics services are used</li>
-            </ul>
+            <p>The Apps do not share user information with third parties under any circumstances. All data is stored only on the device.</p>
 
-            <h2>📱 Permissions Used</h2>
-            <h3>Storage Permission</h3>
-            <p>Used to save PDF and image files to the device. Accessed only when the user performs an export operation.</p>
-
-            <h3>Camera Permission (Optional)</h3>
-            <p>Required only if using the feature to attach photos to receipts. Permission is not needed if this feature is not used.</p>
-
-            <h3>Internet Connection</h3>
-            <p>Internet connection is used for the following purposes:</p>
-            <ul>
-                <li>Loading Google Fonts (to provide font functionality)</li>
-                <li>Displaying ads (free version only; no ads in premium version)</li>
-                <li>Processing premium feature purchases (Google Play Billing)</li>
-            </ul>
-
-            <h2>🎯 About Advertising</h2>
-            <p>The free version displays ads. Please understand the following:</p>
-            <ul>
-                <li>No personally identifiable information is collected for ad display</li>
-                <li>Ad networks follow their own privacy policies</li>
-                <li>Ads are removed when the premium pack (¥300) is purchased</li>
-            </ul>
-
-            <h2>💰 About Premium Purchases</h2>
-            <p>Premium feature purchases are processed through Google Play Billing. Purchase information is managed by Google, and the App only verifies purchase status.</p>
-
-            <h2>🗑️ Data Deletion</h2>
-            <p>Users can delete data at any time using the following methods:</p>
-            <ul>
-                <li><strong>Individual Deletion:</strong> Delete each receipt within the app</li>
-                <li><strong>Complete Deletion:</strong> Uninstalling the app will delete all data</li>
-            </ul>
-            <p>Since data is not stored in the cloud, it is completely deleted after uninstallation and cannot be recovered.</p>
+            <h2>💰 Purchases & Billing</h2>
+            <p>Premium feature purchases are processed through Google Play Billing. Purchase information is managed by Google, and the Apps only verify purchase status.</p>
 
             <h2>👶 Children's Privacy</h2>
-            <p>The App is suitable for all ages and does not intentionally collect personal information from children under 13. Since the App does not collect personal information, it can be used safely by children.</p>
+            <p>The Apps are suitable for all ages and do not intentionally collect personal information from children under 13.</p>
 
-            <h2>🔄 Changes to Privacy Policy</h2>
-            <p>This Privacy Policy may be changed without notice due to legal changes or app feature additions. Significant changes will be communicated within the app or on this page.</p>
+            <h2>🔄 Policy Changes</h2>
+            <p>This Privacy Policy may be changed without notice due to legal changes or app feature additions.</p>
 
             <h2>📞 Contact</h2>
-            <div class="contact">
-                <p>For questions, comments about this Privacy Policy, or inquiries about the app, please contact us:</p>
+            <div class="contact-box">
                 <p><strong>Developer:</strong> QueStA</p>
                 <p><strong>Email:</strong> support@questaedu.com</p>
             </div>
 
-            <h2>✅ Consent</h2>
-            <p>By using this App, you are deemed to have agreed to this Privacy Policy.</p>
+            <h2>📜 Terms of Service</h2>
+            <p>By using the Apps, you are deemed to have agreed to this Privacy Policy and Terms of Service. The Apps are for personal use only. Redistribution or modification for commercial purposes is prohibited.</p>
         </div>
 
-        <div class="footer">
-            <p>Made with ❤️ by QueStA</p>
-            <p>© 2026 CasualReceipt. All rights reserved.</p>
-        </div>
     </div>
+</div>
 
-    <script>
-        function switchLanguage(lang) {
-            // Hide all content
-            document.querySelectorAll('.content').forEach(el => {
-                el.classList.remove('active');
-            });
+<div class="footer">
+    <p>Made with <span class="heart">♥</span> by QueStA &nbsp;|&nbsp; © 2026 QueStA. All rights reserved.</p>
+</div>
 
-            // Remove active class from all buttons
-            document.querySelectorAll('.language-toggle button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Show selected content and activate button
-            document.getElementById('content-' + lang).classList.add('active');
-            document.getElementById('btn-' + lang).classList.add('active');
-        }
-    </script>
+<script>
+    function switchLang(lang) {
+        document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('content-' + lang).classList.add('active');
+        document.getElementById('btn-' + lang).classList.add('active');
+    }
+</script>
 </body>
 </html>
