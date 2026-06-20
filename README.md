@@ -21,7 +21,7 @@ QueStA Edu が提供するアプリ・サービスのプライバシーポリシ
 ```
 docs/
 ├── index.html                          # Android アプリ共通ポリシー
-└── kokoiro/                            # QueStA Edu SNS自動化サービス
+└── questa-edu/                            # QueStA Edu SNS自動化サービス
     ├── privacy-policy/                 # プライバシーポリシー
     ├── instagram/data-deletion/        # Instagramデータ削除手順
     ├── x/data-deletion/                # X（将来）
@@ -33,8 +33,8 @@ docs/
 | 用途 | URL |
 |------|-----|
 | Android アプリ（共通） | https://toko315.github.io/QueStA-Play-policies/ |
-| kokoiro プライバシーポリシー | https://toko315.github.io/QueStA-Play-policies/kokoiro/privacy-policy/ |
-| Instagram データ削除手順 | https://toko315.github.io/QueStA-Play-policies/kokoiro/instagram/data-deletion/ |
+| questa-edu プライバシーポリシー | https://toko315.github.io/QueStA-Play-policies/questa-edu/privacy-policy/ |
+| Instagram データ削除手順 | https://toko315.github.io/QueStA-Play-policies/questa-edu/instagram/data-deletion/ |
 
 ## 📞 Contact
 
